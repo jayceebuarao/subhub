@@ -9,10 +9,10 @@ This code is for a project in Physical Computing, Creative Computing.
 1. Install the latest version of the Arduino IDE
 2. Install the necessary add-ons of the ESP8266 board to the IDE
     - [Follow the instructions in this website](https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/) (except for the code part)
-3. Install the usb drivers to accomodate board
+3. Install the usb drivers to accommodate board
     - [Download Here](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)
 4. Install all the following libraries: (either through Arduino IDE Library Manager or manually installing)
-    - RTCLib by Neiron
+    - RTCLib by NeiroN
     - Adafruit Neopixel
     - Adafruit Neomatrix
     - Adafruit GFX
