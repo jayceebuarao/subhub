@@ -21,11 +21,14 @@ Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(64, 8, PIN,
 // DS1302 rtc(ce_pin, sck_pin, io_pin);
 DS1302 rtc(D2, D5, D4);
 
-char *schedule[][3] = {{"", "", ""}, //empty array
+char *schedule[][3] = {  {"", "", ""}, //Sunday
                          {"107. RESPONSIVE WEB. Mr Basit","107. PHYSICAL COMPUTING. Mr Iftikhar","107. EMERGING TECHNOLOGIES. Dr Brohi"}, //Monday
                          {"107. PHYSICAL COMPUTING. Mr Iftikhar","107. PHYSICAL COMPUTING. Mr Iftikhar","VACANT"}, //Tuesday
                          {"107. EMERGING TECHNOLOGIES. Dr Brohi","107. CREATIVE INDUSTRIES CHALLENGE. Ms Arshiya","107. TOMORROW'S WEB. Mr Basit"}, //Wednesday
-                         {"107. PHYSICAL COMPUTING. Mr Iftikhar","107. CREATIVE INCUBATOR. Ms Arshiya","107. CREATIVE INDUSTRIES CHALLENGE. Ms Arshiya"}}; //thursday
+                         {"107. PHYSICAL COMPUTING. Mr Iftikhar","107. CREATIVE INCUBATOR. Ms Arshiya","107. CREATIVE INDUSTRIES CHALLENGE. Ms Arshiya"}, //Thursday
+                         {"", "", ""}, //Friday
+                         {"", "", ""}, //Sunday
+                       }; 
                          
 void setup() {
   Serial.begin(115200);
@@ -47,7 +50,7 @@ void setup() {
   Serial.println("rtc done");
 }
 
-// DISPLAY THE FULL TEXT
+// subject THE FULL TEXT
 char *subject = "VACANT";
 int  pixelPerChar = 6;
 int  maxDisplacement;
@@ -79,7 +82,14 @@ void changeSub(int current_day, int current_hour, int current_minute){
     else if(current_minute >= 31 && current_minute <= 59) subject = schedule[current_day][2];
   }
   else if (current_hour >= 14) subject = "Call me when you're home <3"; 
-//  subject = schedule[current_day][session];
+
+  //the following if statements are for the weekends
+  if(current_day == 0 || current_day == 5 || current_day == 6){ //sunday, friday, saturday
+    if(current_hour >= 9 && current_hour <= 14){
+      subject = "Creative Computing @ Bath Spa University! Learn WebDesign, GamesDevelopment, PhoneApps, MachineLearning, AR-VR…..& lots more! Visit www.bathspa.ae";
+    }
+  }
+
   maxDisplacement = strlen(subject) * pixelPerChar;
 }
 
@@ -94,5 +104,5 @@ void loop() {
     x = matrix.width();
   }
   matrix.show();
-  delay(100);
+  delay(80);
 }
