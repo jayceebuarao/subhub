@@ -16,10 +16,15 @@ This code is for a project in Physical Computing, Creative Computing.
     - Adafruit Neopixel
     - Adafruit Neomatrix
     - Adafruit GFX
-5. Upload the code to the board
+5. Setup Arduino IDE > Tools > Board > "NodeMCU 1.0 (ESP-12E Module)"
+6. Upload the code to the board
 
 ## Notes: 
 - make sure you are using a wire that has dIn and dOut. A normal charging wire will not upload the code to the board.
+
+## Errors: 
+> DS1302 rtc() does not name a type
+- Required Library was not installed, or incorrectly installed.
 
 ### Credits: 
 - Jaycee Buarao
