@@ -25,7 +25,7 @@ char *schedule[][3] = {  {"", "", ""}, //Sunday
                          {"106. IDEATION AND CPS. Ms Anmol","106. RESPONSIVE WEB. Mr Basit","106. EXPERIENCE DESIGN. Mr Iftikhar"}, //Monday
                          {"106. TOMORROW'S WEB. Mr Basit","106. CREATIVE INCUBATOR. Ms Arshiya","106. RESPONSIVE WEB. Mr Basit"}, //Tuesday
                          {"106. WEB DEVELOPMENT. Ms Zainab","106. EXPERIENCE DESIGN. Mr Iftikhar","106. CREATIVE INCUBATOR. Ms Arshiya"}, //Wednesday
-                         {"Vacant","106. EMERGING TECHNOLOGIES. Dr Brohi","106. IDEATION AND CPS. Ms Anmol"}//Thursday
+                         {"Vacant","106. EMERGING TECHNOLOGIES. Dr Brohi","106. IDEATION AND CPS. Ms Anmol"},//Thursday
                          {"", "", ""}, //Friday
                          {"", "", ""}, //Sunday
                        }; 
@@ -59,35 +59,37 @@ int x = matrix.width();
 void changeSub(int current_day, int current_hour, int current_minute){
 //  int current_hour, int current_minute, int current_second
   int session = 0;
- //check every hour then check if between minutte 0-30 or 31-59
-  if(current_hour == 9){
-    if(current_minute >= 0 && current_minute <= 30) subject = "Good Morning, have fun at school! <3 Love you!"; 
-    else if(current_minute >= 31 && current_minute <= 59) subject = schedule[current_day][0];
-  }
-  else if(current_hour == 10){
-    if(current_minute >= 0 && current_minute <= 30) subject = schedule[current_day][0];
-    else if(current_minute >= 31 && current_minute <= 59) subject = schedule[current_day][0];
-  }
-  else if(current_hour == 11){
-    if(current_minute >= 0 && current_minute <= 30) subject = schedule[current_day][1];
-    else if(current_minute >= 31 && current_minute <= 59) subject = schedule[current_day][1];
-  }
-  else if(current_hour == 12){
-    if(current_minute >= 0 && current_minute <= 30) subject = schedule[current_day][1];
-    else if(current_minute >= 31 && current_minute <= 59) subject = schedule[current_day][2];
-  }
-  else if(current_hour == 13){
-    if(current_minute >= 0 && current_minute <= 30) subject = schedule[current_day][2];
-    else if(current_minute >= 31 && current_minute <= 59) subject = schedule[current_day][2];
-  }
-  else if (current_hour >= 14) subject = "Call me when you're home <3"; 
-  
-  //the following if statements are for the weekends
-  if(current_day == 0 || current_day == 5 || current_day == 6){ //sunday, friday, saturday
-    if(current_hour >= 9 && current_hour <= 14){
+ //check every hour then check if between minute 0-30 or 31-59
+  if(current_day == 1 || current_day == 2 || current_day == 3 || current_day == 4){
+    if(current_hour == 9){
+      if(current_minute >= 0 && current_minute <= 30) subject = "Good Morning, have fun at school! <3 Love you!"; 
+      else if(current_minute >= 31 && current_minute <= 59) subject = schedule[current_day][0];
+    }
+    else if(current_hour == 10){
+      if(current_minute >= 0 && current_minute <= 30) subject = schedule[current_day][0];
+      else if(current_minute >= 31 && current_minute <= 59) subject = schedule[current_day][0];
+    }
+    else if(current_hour == 11){
+      if(current_minute >= 0 && current_minute <= 30) subject = schedule[current_day][1];
+      else if(current_minute >= 31 && current_minute <= 59) subject = schedule[current_day][1];
+    }
+    else if(current_hour == 12){
+      if(current_minute >= 0 && current_minute <= 30) subject = schedule[current_day][1];
+      else if(current_minute >= 31 && current_minute <= 59) subject = schedule[current_day][2];
+    }
+    else if(current_hour == 13){
+      if(current_minute >= 0 && current_minute <= 30) subject = schedule[current_day][2];
+      else if(current_minute >= 31 && current_minute <= 59) subject = schedule[current_day][2];
+    }
+    else if (current_hour >= 14) subject = "Call me when you're home <3"; 
+    
+  } 
+  else if(current_day == 0 || current_day == 5 || current_day == 6){ //the following if statements are for the weekends (sunday, friday, saturday)
+    if(current_hour >= 9 && current_hour <= 20){
       subject = "Creative Computing @ Bath Spa University! Learn WebDesign, GamesDevelopment, PhoneApps, MachineLearning, AR-VR…..& lots more! Visit www.bathspa.ae";
     }
   }
+
   maxDisplacement = strlen(subject) * pixelPerChar;
 }
 
