@@ -25,6 +25,7 @@ This code is for a project in Physical Computing, Creative Computing.
 ## Errors: 
 > DS1302 rtc() does not name a type
 - Required Library was not installed, or incorrectly installed.
+- Library might have been installed twice. 
 
 ### Credits: 
 - Jaycee Buarao
