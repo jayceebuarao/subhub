@@ -22,10 +22,10 @@ Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(64, 8, PIN,
 DS1302 rtc(D2, D5, D4);
 
 char *schedule[][3] = {  {"", "", ""}, //Sunday
-                         {"106. IDEATION AND CPS. Ms Anmol","106. RESPONSIVE WEB. Mr Basit","106. EXPERIENCE DESIGN. Mr Iftikhar"}, //Monday
-                         {"106. TOMORROW'S WEB. Mr Basit","106. CREATIVE INCUBATOR. Ms Arshiya","106. RESPONSIVE WEB. Mr Basit"}, //Tuesday
-                         {"106. WEB DEVELOPMENT. Ms Zainab","106. EXPERIENCE DESIGN. Mr Iftikhar","106. CREATIVE INCUBATOR. Ms Arshiya"}, //Wednesday
-                         {"Vacant","106. EMERGING TECHNOLOGIES. Dr Brohi","106. IDEATION AND CPS. Ms Anmol"},//Thursday
+                         {"106. Ideation And CPS. Ms Anmol","106. Responsive Web. Mr Basit","106. Experience Design. Mr Iftikhar"}, //monday
+                         {"106. Tomorrow's Web. Mr Basit","106. Creative Incubator. Ms Arshiya","106. Responsive Web. Mr Basit"}, //tuesday
+                         {"106. Web Development. Ms Zainab","106. Experience Design. Mr Iftikhar","106. Creative Incubator. Ms Arshiya"}, //wednesday
+                         {"Vacant","106. Emerging Technologies. Dr Brohi","106. Ideation And CPS. Ms Anmol"}, //thursday
                          {"", "", ""}, //Friday
                          {"", "", ""}, //Sunday
                        }; 
